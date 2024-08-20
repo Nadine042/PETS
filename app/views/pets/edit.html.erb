@@ -1,0 +1,8 @@
+<h1>update the data of the pet</h1>
+<%= simple_form_for(@pet) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :kind %>
+  <%= f.input :age %>
+  <%= f.input :details %>
+  <%= f.submit %>
+<% end %>

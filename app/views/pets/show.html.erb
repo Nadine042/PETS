@@ -1,0 +1,9 @@
+ <div class="container">
+  <h1><%= @pet.name %> - <%= @pet.age%></h1>
+  <h2><%= @pet.kind %></h2>
+  <p><%= @pet.details %></p>
+
+     <!-- <p class="btn"><%= link_to "make a booking", new_pet_booking_path(@pet)%> -->
+     <%=link_to 'edit pet info', edit_pet_path(@pet)%>
+    <p><%= link_to "Back to the pets", pets_path%></p>
+  </div>

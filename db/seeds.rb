@@ -41,5 +41,5 @@ Booking.create!(
   pet: list_pet.sample,
   start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
   end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
-  status: ["available", "not available"].sample
+  status: "pending"
 )

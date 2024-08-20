@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
 
-  resources :profiles, only: [:show]
+  get "profiles/:id", to: "profiles#show"
 
   resources :pets, only: [:index, :show, :new, :update, :create, :edit] do
     resources :bookings, only: [:new, :create]

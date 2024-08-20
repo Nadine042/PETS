@@ -1,8 +1,10 @@
 <div class="container">
 <h1>All pets</h1>
 <br>
+
     <%@pets.each do |pet| %>
       <div class="card">
+     <img src = <%= pet.picture_url%>>
         <h2 class="btn"><%=link_to pet.name, pet_path(pet)%></h2>
       </div>
     <% end %>

@@ -10,8 +10,13 @@
 require 'faker'
 list = []
 list_pet = []
+Booking.destroy_all
+User.destroy_all
 
-while list.size < 3
+Pet.destroy_all
+
+
+while list.size < 5
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -25,11 +30,11 @@ while list.size < 3
   )
   list << user
 end
-while list_pet.size < 2
+while list_pet.size < 5
   p list
   pet = Pet.create!(
     name: Faker::Creature::Dog.name,
-    kind: Faker::Creature::Animal.name,
+    kind: ["dog", "cat", "bird", "rabbit"].sample,
     age: rand(0..8),
     details: Faker::GreekPhilosophers.quote,
     user: list.sample,

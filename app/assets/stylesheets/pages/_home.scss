@@ -1,1 +1,65 @@
 // Specific CSS for your home-page
+.home{
+  margin-left: 10%;
+  margin-right: 10%;
+  display: block;
+  text-align: center;
+  justify-content: center;
+  .head{
+    .banner {
+      background-size: cover;
+      background-position: center;
+      padding: 150px 0;
+      height: 500px;
+
+        h1 {
+        margin: 0;
+        color: white;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        font-size: 32px;
+        font-weight: bold;
+        margin: 20px;
+      }
+
+        p {
+        font-size: 20px;
+        color: white;
+        opacity: .7;
+        text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      }
+
+        a{
+          border-radius: 10px;
+        }
+    }
+  }
+  .faq{
+    h3{
+      margin: 20px;
+    }
+    .notification {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 8px;
+      background: white;
+      padding: 8px 16px;
+      border: 1px solid rgb(235,235,235);
+    }
+
+    .notification .notification-content {
+      flex-grow: 1;
+      padding: 0 24px;
+    }
+
+    .notification p {
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .notification small {
+      color: #999999;
+      font-weight: bold;
+    }
+  }
+}

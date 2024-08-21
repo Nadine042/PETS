@@ -10,6 +10,9 @@
 require 'faker'
 list = []
 list_pet = []
+Booking.destroy_all
+Pet.destroy_all
+User.destroy_all
 
 while list.size < 3
   user = User.create!(

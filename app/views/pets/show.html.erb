@@ -7,3 +7,8 @@
      <%=link_to 'edit pet info', edit_pet_path(@pet)%>
     <p><%= link_to "Back to the pets", pets_path%></p>
   </div>
+  <div style="width: 60%; height: 300px;"
+    data-controller="map"
+    data-map-markers-value="<%= @marker.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>

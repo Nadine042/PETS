@@ -15,8 +15,7 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    sign_in_partial_and_pets_controller
-    <%= f.input :fist_name,
+    <%= f.input :first_name,
                 required: true,
                 input_html: { autocomplete: "first name" } %>
     <%= f.input :last_name,
@@ -28,11 +27,8 @@
     <%= f.input :location,
                 required: true,
                 input_html: { autocomplete: "location" } %>
-    <%= f.check_box :children,
-                required: true,%>
-
-
-=======
+    <%= f.check_box :children%>
+    children?
   </div>
 
   <div class="form-actions">

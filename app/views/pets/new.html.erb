@@ -2,7 +2,7 @@
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
   <%= f.input :kind %>
-  <%= f.input :age %>
+  <%= f.input :age, as: :numeric%>
   <%= f.input :details %>
   <%= f.submit %>
 <% end %>

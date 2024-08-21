@@ -1,10 +1,20 @@
 class PetsController < ApplicationController
   def show
     @pet = Pet.find(params[:id])
+    @user = @pet.user
+    @user.geocode
+    @marker = [{ lat: @user.latitude, lng: @user.longitude }]
   end
 
   def index
     @pets = Pet.all
+    @users = User.joins(:pets)
+    @markers = @users.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def new
@@ -27,7 +37,7 @@ class PetsController < ApplicationController
 
   def update
     @pet = Pet.find(params[:id])
-    @pet.update(pet_params) # if @pet.user == current_user
+    @pet.update(pet_params) if @pet.user == current_user
     redirect_to pets_path(@pets)
   end
 

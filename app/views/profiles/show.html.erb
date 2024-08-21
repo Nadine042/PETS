@@ -1,1 +1,14 @@
-<%=@user.first_name %>
+<h1>Hello <%=@user.first_name %> <%= @user.last_name %> </h1>
+<p>Your pets are:</p>
+<ul>
+  <% @pets.each do |pet| %>
+  <li>
+    <p><%=pet.name%> <%= pet.age %>yrs the <%= pet.kind %></p>
+  </li>
+  <% end %>
+</ul>
+<p>phone number: <%=@user.phone_number%></p>
+<p>location: <%=@user.location%></p>
+<p>email: <%=@user.email%></p>
+<p>has children? <%=@user.children ? "yes" : "no"%></p>
+<%= link_to "change password", edit_user_registration_path%>

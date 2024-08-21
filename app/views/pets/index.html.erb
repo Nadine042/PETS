@@ -1,3 +1,18 @@
+
+
+<%# THIS IS THE NAV BAR %>
+
+<%= render 'nav' %>
+
+<%# THIS PUTS ALL THE TYPES OF ANIMALS IN THEIR OWN ARRAY %>
+
+<%# CALLING THE CAROUSEL %>
+
+<%@pets_array.each_with_index do |pet_array, index| %>
+ <br>
+
+ <%=render "carousel", list: pet_array, index: index %>
+<% end %>
 <div class="container">
 <h1>All pets</h1>
 <br>

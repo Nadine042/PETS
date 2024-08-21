@@ -1,13 +1,14 @@
-<div class="container">
-<h1>All pets</h1>
-<br>
 
-    <%@pets.each do |pet| %>
-      <div class="card">
-     <img src = <%= pet.picture_url%>>
-        <h2 class="btn"><%=link_to pet.name, pet_path(pet)%></h2>
-      </div>
-    <% end %>
-<p><%= link_to 'create pet',  new_pet_path%></p>
-</div>
-</div>
+<%# THIS IS THE NAV BAR %>
+
+<%= render 'nav' %>
+
+<%# THIS PUTS ALL THE TYPES OF ANIMALS IN THEIR OWN ARRAY %>
+
+<%# CALLING THE CAROUSEL %>
+
+<%@pets_array.each_with_index do |pet_array, index| %>
+ <br>
+
+ <%=render "carousel", list: pet_array, index: index %>
+<% end %>

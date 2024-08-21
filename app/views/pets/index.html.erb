@@ -10,4 +10,9 @@
     <% end %>
 <p><%= link_to 'create pet',  new_pet_path%></p>
 </div>
+
+<div style="width: 60%; height: 300px;"
+  data-controller="map"
+  data-map-markers-value="<%= @markers.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>

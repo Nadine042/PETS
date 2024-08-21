@@ -14,7 +14,10 @@ Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
 
-while list.size < 3
+Pet.destroy_all
+
+
+while list.size < 5
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -23,18 +26,20 @@ while list.size < 3
     children: rand(1..2) == 1,
     email: Faker::Internet.email,
     password: "password",
-    password_confirmation: "password"
+    password_confirmation: "password",
+    profile_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fillustration%2Fangry-birds-3d.html&psig=AOvVaw3iHiCjmUyX0bxBrVzSAedf&ust=1724252457788000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLiE3ovrg4gDFQAAAAAdAAAAABAJ"
   )
   list << user
 end
-while list_pet.size < 2
+while list_pet.size < 5
   p list
   pet = Pet.create!(
     name: Faker::Creature::Dog.name,
-    kind: Faker::Creature::Animal.name,
+    kind: ["dog", "cat", "bird", "rabbit"].sample,
     age: rand(0..8),
     details: Faker::GreekPhilosophers.quote,
-    user: list.sample
+    user: list.sample,
+    picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IH4b3hvDu80YCgesuXzZuXQB7_OZ7_sffw&s"
   )
   list_pet << pet
 end

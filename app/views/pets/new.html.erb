@@ -1,8 +1,8 @@
 <h1>add a new pet</h1>
 <%= simple_form_for(@pet) do |f| %>
   <%= f.input :name %>
-  <%= f.input :kind %>
-  <%= f.input :age, as: :numeric%>
+  <%= f.input :kind, collection: Pet::SPECIES, as: :select %>
+  <%= f.input :age, as: :numeric %>
   <%= f.input :details %>
   <%= f.submit %>
 <% end %>

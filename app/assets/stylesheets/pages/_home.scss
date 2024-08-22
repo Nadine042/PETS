@@ -30,13 +30,14 @@
 
         a{
           border-radius: 10px;
-          width: 3%;
+          width: 300px;
         }
         .container{
           display: flex;
           flex-direction: column;
           justify-content: center;
           text-align: center;
+          align-items: center;
         }
     }
   }

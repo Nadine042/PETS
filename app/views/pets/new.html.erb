@@ -1,8 +1,24 @@
-<h1>add a new pet</h1>
-<%= simple_form_for(@pet) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :kind, collection: Pet::SPECIES, as: :select %>
-  <%= f.input :age, as: :numeric %>
-  <%= f.input :details %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container_new">
+  <div class="col-6">
+    <div class="card">
+      <h5>Add your pet hier</h5>
+      <%= simple_form_for(@pet) do |f| %>
+          <%= f.input :name %>
+          <div class="row">
+            <div class="col">
+              <%= f.input :age, as: :numeric %>
+            </div>
+            <div class="col">
+              <%= f.input :kind, collection: Pet::SPECIES, as: :select %>
+            </div>
+          </div>
+          <%= f.input :details %>
+          <%= f.input :profile_picture, as: :file %>
+
+         <%= f.submit "Post your Pet", class: "btn btn-primary"%>
+
+      <% end %>
+    </div>
+  </div>
+</div>

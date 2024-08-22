@@ -1,21 +1,23 @@
 <h1>Hello <%=@user.first_name %> <%= @user.last_name %> </h1>
-<p>Your pets are:</p>
-<ul>
-  <% @pets.each do |pet| %>
-  <li>
-    <p><%=pet.name%> <%= pet.age %>yrs the <%= pet.kind %></p>
-  </li>
-  <% end %>
-</ul>
-<p>phone number: <%=@user.phone_number%></p>
-<p>location: <%=@user.location%></p>
-<p>email: <%=@user.email%></p>
-<p>has children?: <%=@user.children ? "yes" : "no"%></p>
-<p>bookings:</p>
-<ul>
-<% @user.bookings.each do |booking| %>
-  <li><%= booking.pet.name%> form <%= booking.start_date %> to <%= booking.end_date %></li>
-<%end %>
-</ul>
+<div class="profile_container">
+  <p>Your pets are:</p>
+  <ul>
+    <% @pets.each do |pet| %>
+    <li>
+      <p><%=pet.name%> <%= pet.age %>yrs the <%= pet.kind %></p>
+    </li>
+    <% end %>
+  </ul>
+  <p>phone number: <%=@user.phone_number%></p>
+  <p>location: <%=@user.location%></p>
+  <p>email: <%=@user.email%></p>
+  <p>has children?: <%=@user.children ? "yes" : "no"%></p>
+  <p>bookings:</p>
+  <ul>
+  <% @user.bookings.each do |booking| %>
+    <li><%= booking.pet.name%> form <%= booking.start_date %> to <%= booking.end_date %></li>
+  <%end %>
+  </ul>
+</div>
 <%= link_to "change password", edit_user_registration_path%>
 <%= link_to "sign out (pls stay)", destroy_user_session_path, data: {turbo_method: :delete}%>

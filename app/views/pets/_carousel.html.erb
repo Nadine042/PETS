@@ -11,9 +11,9 @@
                 <div class="row">
                   <% group.each do |pet| %>
                     <div class="col-md-3">
-                      <div class="card">
+                      <div style ="padding: 0;" class="card">
                         <div style = "padding: 0;" class="card-body">
-                          <img style="margin-top: 0px; margin-right: 0; width: 260px; " src="<%= pet.picture_url %>" alt="Pet Image" class="image">
+                          <img style="margin-top: 0px; margin-right: 0; width: 100%; " src="<%= cl_image_path(pet.profile_picture.key) %>" alt="Pet Image" class="image">
                           <h5 class="card-title"><%=link_to pet.name, pet_path(pet)%></h5>
                           <p style= "margin-left: 0px">Start date and end date</p>
                         </div>
@@ -27,11 +27,11 @@
 
 
   <a class="carousel-control-prev" href="#carousel_<%=index%>" role="button" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span style = "background-image: url(https://banner2.cleanpng.com/20180509/czq/avc46ec59.webp)" class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </a>
   <a class="carousel-control-next" href="#carousel_<%=index%>" role="button" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span style = "background-image: url(https://banner2.cleanpng.com/20180417/aew/avfo6u08p.webp)"; class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </a>
 </div>

@@ -44,21 +44,10 @@ class PetsController < ApplicationController
   end
 
   def carousel
-    @cat_list = []
-    @dog_list = []
-    @bird_list = []
-    @rabbit_list = []
-    @pets.each do |pet|
-      if pet.kind == "cat"
-        @cat_list << pet
-      elsif pet.kind == "dog"
-        @dog_list << pet
-      elsif pet.kind == "bird"
-        @bird_list << pet
-      elsif pet.kind == "rabbit"
-        @rabbit_list << pet
-      end
-    end
+    @cat_list = Pet.where(kind: "cat")
+    @dog_list = Pet.where(kind: "dog")
+    @bird_list = Pet.where(kind: "bird")
+    @rabbit_list = Pet.where(kind: "rabbit")
     @pets_array = [@cat_list, @dog_list, @bird_list, @rabbit_list]
   end
 

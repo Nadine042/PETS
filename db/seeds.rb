@@ -24,7 +24,7 @@ while list.size < 15
     email: Faker::Internet.email,
     password: "password",
     password_confirmation: "password",
-    profile_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fillustration%2Fangry-birds-3d.html&psig=AOvVaw3iHiCjmUyX0bxBrVzSAedf&ust=1724252457788000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLiE3ovrg4gDFQAAAAAdAAAAABAJ"
+    profile_url: Faker::Avatar.image
   )
   list << user
 end
@@ -37,7 +37,7 @@ while list_pet.size < 15
     start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
     end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
     user: list.sample,
-    picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IH4b3hvDu80YCgesuXzZuXQB7_OZ7_sffw&s"
+    picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGrwqiibW9aYEokXO71t1fcMOpGY67MGzWqw&s"
   )
   list_pet << pet
 end

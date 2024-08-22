@@ -1,21 +1,32 @@
 <h1>Hello <%=@user.first_name %> <%= @user.last_name %> </h1>
-<p>Your pets are:</p>
-<ul>
-  <% @pets.each do |pet| %>
-  <li>
-    <p><%=pet.name%> <%= pet.age %>yrs the <%= pet.kind %></p>
-  </li>
-  <% end %>
-</ul>
-<p>phone number: <%=@user.phone_number%></p>
-<p>location: <%=@user.location%></p>
-<p>email: <%=@user.email%></p>
-<p>has children?: <%=@user.children ? "yes" : "no"%></p>
-<p>bookings:</p>
-<ul>
-<% @user.bookings.each do |booking| %>
-  <li><%= booking.pet.name%> form <%= booking.start_date %> to <%= booking.end_date %></li>
-<%end %>
-</ul>
+<div class="profile_container">
+  <p>image_path<p>
+    <h2>Your pets are:</h2>
+    <ul>
+      <% @pets.each do |pet| %>
+      <li>
+          <div style ="padding: 0;" class="card">
+                        <div style = "padding: 0;" class="card-body">
+                          <img style="margin-top: 0px; margin-right: 0; width: 100%; " src="<%= pet.picture_url %>" alt="Pet Image" class="image">
+                          <h5 class="card-title"><%=link_to pet.name, pet_path(pet)%></h5>
+                          <p style= "margin-left: 0px">Start date and end date</p>
+                        </div>
+          </div>
+      </li>
+      <% end %>
+    </ul>
+    <div class = "contact-info container">
+      <p>Phone number: <%=@user.phone_number%></p>
+      <p>Location: <%=@user.location%></p>
+      <p>Email: <%=@user.email%></p>
+      <p>Children: <%=@user.children ? "yes" : "no"%></p>
+      <p>Your bookings:</p>
+      <ul>
+      <% @user.bookings.each do |booking| %>
+        <li><%= booking.pet.name%> form <%= booking.start_date %> to <%= booking.end_date %></li>
+      <%end %>
+      </ul>
+    </div>
+</div>
 <%= link_to "change password", edit_user_registration_path%>
 <%= link_to "sign out (pls stay)", destroy_user_session_path, data: {turbo_method: :delete}%>

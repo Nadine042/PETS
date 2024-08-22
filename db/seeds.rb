@@ -14,10 +14,7 @@ Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
 
-Pet.destroy_all
-
-
-while list.size < 5
+while list.size < 15
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -31,7 +28,7 @@ while list.size < 5
   )
   list << user
 end
-while list_pet.size < 5
+while list_pet.size < 15
   pet = Pet.create!(
     name: Faker::Creature::Dog.name,
     kind: ["dog", "cat", "bird", "rabbit"].sample,

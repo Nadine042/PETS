@@ -10,8 +10,10 @@
 
 <%@pets_array.each_with_index do |pet_array, index| %>
  <br>
- <%=render "carousel", list: pet_array, index: index %>
- <br>
+  <%unless pet_array.size == 0%>
+    <%=render "carousel", list: pet_array, index: index %>
+  <% end %>
+<br>
 <% end %>
 
 <p><%= link_to 'create pet',  new_pet_path%></p>

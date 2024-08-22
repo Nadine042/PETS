@@ -1,0 +1,20 @@
+.profile{
+  align-items: center;
+  display: flex;
+  flex: row;
+  justify-content: space-around;
+  margin-top: 15%;
+
+  .part1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+      margin-left: 0px;
+    }
+
+    img{
+      border-radius: 100%;
+    }
+  }
+}

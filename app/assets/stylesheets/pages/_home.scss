@@ -30,6 +30,13 @@
 
         a{
           border-radius: 10px;
+          width: 3%;
+        }
+        .container{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
         }
     }
   }

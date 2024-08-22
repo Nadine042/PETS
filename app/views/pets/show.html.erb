@@ -16,7 +16,7 @@
   <div class="col-6">
     <p><img src="<%= @pet.picture_url %>" alt="Pet Image" class="image" /></p>
   </div>
-  <div style="width: 60%; height: 300px;"
+  <div style="width: 600px; height: 300px;"
     data-controller="map"
     data-map-markers-value="<%= @marker.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>

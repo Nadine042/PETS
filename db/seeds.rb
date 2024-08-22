@@ -28,10 +28,10 @@ while list.size < 15
   )
   list << user
 end
-while list_pet.size < 15
-  pet = Pet.create!(
+5.times do
+  Pet.create!(
     name: Faker::Creature::Dog.name,
-    kind: ["dog", "cat", "bird", "rabbit"].sample,
+    kind: "dog",
     age: rand(0..8),
     details: Faker::GreekPhilosophers.quote,
     start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
@@ -39,5 +39,42 @@ while list_pet.size < 15
     user: list.sample,
     picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IH4b3hvDu80YCgesuXzZuXQB7_OZ7_sffw&s"
   )
-  list_pet << pet
 end
+5.times do
+  Pet.create!(
+    name: Faker::Creature::Dog.name,
+    kind: "cat",
+    age: rand(0..8),
+    details: Faker::GreekPhilosophers.quote,
+    start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
+    end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
+    user: list.sample,
+    picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IH4b3hvDu80YCgesuXzZuXQB7_OZ7_sffw&s"
+  )
+end
+5.times do
+  Pet.create!(
+    name: Faker::Creature::Dog.name,
+    kind: "bird",
+    age: rand(0..8),
+    details: Faker::GreekPhilosophers.quote,
+    start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
+    end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
+    user: list.sample,
+    picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IH4b3hvDu80YCgesuXzZuXQB7_OZ7_sffw&s"
+  )
+end
+5.times do
+  Pet.create!(
+    name: Faker::Creature::Dog.name,
+    kind: "rabbit",
+    age: rand(0..8),
+    details: Faker::GreekPhilosophers.quote,
+    start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
+    end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
+    user: list.sample,
+    picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IH4b3hvDu80YCgesuXzZuXQB7_OZ7_sffw&s"
+  )
+end
+
+

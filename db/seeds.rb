@@ -32,7 +32,6 @@ while list.size < 5
   list << user
 end
 while list_pet.size < 5
-  p list
   pet = Pet.create!(
     name: Faker::Creature::Dog.name,
     kind: ["dog", "cat", "bird", "rabbit"].sample,
@@ -45,11 +44,3 @@ while list_pet.size < 5
   )
   list_pet << pet
 end
-
-Booking.create!(
-  user: list.sample,
-  pet: list_pet.sample,
-  start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
-  end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
-  status: "pending"
-)

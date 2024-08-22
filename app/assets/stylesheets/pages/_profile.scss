@@ -2,7 +2,7 @@
   align-items: center;
   display: flex;
   flex: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin-top: 15%;
 
   .part1{
@@ -15,6 +15,16 @@
 
     img{
       border-radius: 100%;
+    }
+  }
+
+  .part2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    p, h2{
+      margin-left: 0px;
     }
   }
 }

@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   before_action :set_pet, only: [:new, :create]
   before_action :set_booking, only: [:show]
+
   def show
   end
 
@@ -9,7 +10,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = Booking.new
+    @booking.start_date = @pet.start_date
+    @booking.end_date = @pet.end_date
     @booking.pet = @pet
     @booking.user = current_user
     if @booking.save
@@ -26,7 +29,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:user, :pet, :start_date, end_date, :status)
+    params.require(:booking).permit(:user, :pet, :start_date, :end_date, :status)
   end
 
   def set_booking

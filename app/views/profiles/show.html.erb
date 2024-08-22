@@ -10,5 +10,12 @@
 <p>phone number: <%=@user.phone_number%></p>
 <p>location: <%=@user.location%></p>
 <p>email: <%=@user.email%></p>
-<p>has children? <%=@user.children ? "yes" : "no"%></p>
+<p>has children?: <%=@user.children ? "yes" : "no"%></p>
+<p>bookings:</p>
+<ul>
+<% @user.bookings.each do |booking| %>
+  <li><%= booking.pet.name%> form <%= booking.start_date %> to <%= booking.end_date %></li>
+<%end %>
+</ul>
 <%= link_to "change password", edit_user_registration_path%>
+<%= link_to "sign out (pls stay)", destroy_user_session_path, data: {turbo_method: :delete}%>

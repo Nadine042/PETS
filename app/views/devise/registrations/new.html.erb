@@ -1,9 +1,8 @@
-<h2>Sign up</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
+  <div  class ="form" class="form-inputs">
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -27,14 +26,13 @@
     <%= f.input :location,
                 required: true,
                 input_html: { autocomplete: "location" } %>
-    <%= f.check_box :children%>
     Children?
-
+    <%= f.check_box :children%>
+    <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "login_btn" %>
+    </div>
+    <p style = "margin-left: 0px;" class="message">Registered? <%= link_to "Log in", new_session_path(resource_name) %></p>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
+
 <% end %>
-
-<%= render "devise/shared/links" %>

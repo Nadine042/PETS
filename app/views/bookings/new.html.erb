@@ -1,0 +1,8 @@
+<h1>New Booking Request</h1>
+<br>
+<h2>Are you sure</h2>
+<p>remember that <%=@pet.details%></p>
+<p class="disbled"><%= simple_form_for [@pet, @booking] do |f| %>
+  <%= f.submit "Yes, im sure", class: "btn btn-primary" %>
+<% end %>
+</p>

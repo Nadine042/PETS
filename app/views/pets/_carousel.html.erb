@@ -1,24 +1,28 @@
- <div  id="carousel_<%=index%>" class="carousel slide" data-bs-ride="carousel">
 
+
+ <div  id="carousel_<%=index%>" class="carousel slide" data-bs-ride="carousel">
+    <h1><%= "#{list.first.kind}s".upcase %></h1>
     <div style = "padding: 0 200px 0 200px;" class="carousel-inner">
 
 <%# GROUP 4 CATS TOGETHER %>
-        <% list.in_groups_of(4, false).each_with_index do |group, index| %>
-          <div class="carousel-item <%= 'active' if index == 0 %>">
-<%# FOR EACH ROW OF 4 DO THIS %>
-            <div class="row">
-              <% group.each do |pet| %>
-                <div class="col-md-3">
-                  <div class="card">
-                    <div class="card-body">
-                      <h5 class="card-title"><%=link_to pet.name, pet_path(pet)%></h5>
+            <% list.in_groups_of(4, false).each_with_index do |group, index| %>
+              <div class="carousel-item <%= 'active' if index == 0 %>">
+    <%# FOR EACH ROW OF 4 DO THIS %>
+                <div class="row">
+                  <% group.each do |pet| %>
+                    <div class="col-md-3">
+                      <div class="card">
+                        <div style = "padding: 0;" class="card-body">
+                          <img style="margin-top: 0px; margin-right: 0; width: 260px; " src="<%= pet.picture_url %>" alt="Pet Image" class="image">
+                          <h5 class="card-title"><%=link_to pet.name, pet_path(pet)%></h5>
+                          <p style= "margin-left: 0px">Start date and end date</p>
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
                 </div>
-              <% end %>
-            </div>
-          </div>
-        <% end %>
+              </div>
+            <% end %>
     </div>
 
 

@@ -14,10 +14,7 @@ Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
 
-Pet.destroy_all
-
-
-while list.size < 5
+while list.size < 15
   user = User.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -31,23 +28,16 @@ while list.size < 5
   )
   list << user
 end
-while list_pet.size < 5
-  p list
+while list_pet.size < 15
   pet = Pet.create!(
     name: Faker::Creature::Dog.name,
     kind: ["dog", "cat", "bird", "rabbit"].sample,
     age: rand(0..8),
     details: Faker::GreekPhilosophers.quote,
+    start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
+    end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
     user: list.sample,
     picture_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2IH4b3hvDu80YCgesuXzZuXQB7_OZ7_sffw&s"
   )
   list_pet << pet
 end
-
-Booking.create!(
-  user: list.sample,
-  pet: list_pet.sample,
-  start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
-  end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
-  status: "pending"
-)

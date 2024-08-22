@@ -14,8 +14,9 @@
             </div>
           </div>
           <%= f.input :details %>
-          <%= f.input :profile_picture, as: :file %>
-
+          <div class="upload_photo">
+            <%= f.input :profile_picture, as: :file, input_html: { class: 'file-input' } %>
+          </div>
          <%= f.submit "Post your Pet", class: "btn btn-primary"%>
 
       <% end %>

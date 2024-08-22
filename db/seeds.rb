@@ -10,6 +10,7 @@
 require 'faker'
 list = []
 list_pet = []
+
 Booking.destroy_all
 Pet.destroy_all
 User.destroy_all

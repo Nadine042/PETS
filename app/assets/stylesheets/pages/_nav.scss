@@ -1,6 +1,22 @@
 body {
-  font-family: sans-serif;
-  background-color: rgb(255, 255, 255); }
+  font-family: 'Nunito', Helvetica, serif;
+  background-color: rgb(255, 255, 255);
+}
+
+.nav-button-home {
+font-size: 20px;
+font-weight: bold;
+}
+
+.nav-button-services {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-button-products {
+  font-size: 20px;
+  font-weight: bold;
+}
 
 .nav-image {
   width: 200px;
@@ -15,7 +31,6 @@ body {
 
   text-transform: uppercase;
   color: #333;
-	text-shadow: 1px 1px 1px #ccc;
 }
 
 #profile {

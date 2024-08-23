@@ -5,39 +5,63 @@
    <%=cl_image_tag @user.photo.key, class: "photo"%>
    <% end %>
     <h1>Hello <%=@user.first_name %> <%= @user.last_name %> </h1>
-  </div>
-  <div class="part2">
-    <% if @pets.size > 0 %>
-      <h2>Your pets are:</h2>
-      <% @pets.each do |pet| %>
-      <p>-<%=pet.name%> <%= pet.age %>yrs the <%= pet.kind %></p>
-      <% end %>
-    <% else %>
-      <h2>You dont have any pets</h2>
-    <% end %>
-    <br>
-    <h2>Phone number:</h2>
-    <p>-<%=@user.phone_number%></p>
-    <br>
-    <h2>Location:</h2>
-    <p>-<%=@user.location%></p>
-    <br>
-    <h2>Email:</h2>
-    <p>-<%=@user.email%></p>
-    <br>
-    <h2><%=@user.children ? "You have children" : "You dont have children"%></h2>
-    <br>
-    <% if @user.bookings.size > 0 %>
-      <h2>Bookings:</h2>
-      <% @user.bookings.each do |booking| %>
-        <p>-<%= booking.pet.name%> form <%= booking.start_date %> to <%= booking.end_date %></p>
-      <%end %>
-    <% else %>
-      <h2>You dont have any bookings yet</h2>
-    <% end %>
-    <div class="links">
-      <p><%= link_to "edit user", edit_user_registration_path%> </p>
-      <p><%= link_to "sign out (pls stay)", destroy_user_session_path, data: {turbo_method: :delete}%></p>
+
+<div class="container mt-5" id="container_show">
+  <div class="card" id="card_show">
+    <div class="row align-items-center">
+       <div class="col-md-7">
+            <div class="part1">
+              <img class="rounded-image" id="profile_photo" src=data:image/jpeg;base64,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 alt="image" >
+              <h1 class="profile_page_h1"><%=@user.first_name %> <%= @user.last_name %> </h1>
+              <h2 class="profile_page_h2"><strong>Phone number</strong></h2>
+              <p class="profile_page_p"><%=@user.phone_number%></p>
+              <h2 class="profile_page_h2"><strong>Email</strong></h2>
+              <p class="profile_page_p"><%=@user.email%></p>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+              <% if @pets.size > 0 %>
+                <h2 class="profile_page_h2"><strong>Your pets are</strong></h2>
+                <% @pets.each do |pet| %>
+
+                <p class="profile_page_p"><%= link_to "#{pet.name}", pet_path(pet), class: "btn mt-2", id: "pet_link_button" %></p>
+
+                <% end %>
+              <% else %>
+                <h2 class="profile_page_h2"><strong>You dont have any pets</strong></h2>
+              <% end %>
+
+              <h2 class="profile_page_h2"><strong>Location</strong></h2>
+              <p class="profile_page_p"><%=@user.location%></p>
+
+              <h2 class="profile_page_h2"><strong><%=@user.children ? "You have children" : "You dont have children"%></strong></h2>
+              <br>
+              <% if @user.bookings.size > 0 %>
+                <h2 class="profile_page_h2"><strong>Bookings</strong></h2>
+                <% @user.bookings.each do |booking| %>
+                  <p class="profile_page_p"><%= booking.pet.name%> form <%= booking.start_date %> to <%= booking.end_date %></p>
+                <%end %>
+              <% else %>
+                <h2 class="profile_page_h2"><strong>You dont have any bookings yet</strong></h2>
+              <% end %>
+              <div class="links">
+
+                <div class="row align-items-center" id="buttons_profile">
+                   <div class="col">
+                      <p><%= link_to "edit user", edit_user_registration_path, class: "btn btn-outline-primary mt-2", id: "edit_button" %></p>
+                   </div>
+                   <div class="col">
+                      <p><%= link_to "sign out", destroy_user_session_path, class: "btn btn-outline-dark mt-2", id: "signout_button", data: {turbo_method: :delete}%></p>
+                   </div>
+                </div>
+              </div>
+      </div>
     </div>
   </div>
-</div>
+
+
+
+      </div>
+    </div>
+  </div>

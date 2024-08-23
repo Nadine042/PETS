@@ -1,4 +1,10 @@
 <%= render 'nav' %>
+<div class="profile">
+  <div class="part1">
+  <% if @user.photo.attached? %>
+   <%=cl_image_tag @user.photo.key, class: "photo"%>
+   <% end %>
+    <h1>Hello <%=@user.first_name %> <%= @user.last_name %> </h1>
 
 <div class="container mt-5" id="container_show">
   <div class="card" id="card_show">

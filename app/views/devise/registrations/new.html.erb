@@ -26,6 +26,9 @@
     <%= f.input :location,
                 required: true,
                 input_html: { autocomplete: "location" } %>
+    <div class="upload_photo">
+            <%= f.input :photo, as: :file, input_html: { class: 'file-input' } %>
+    </div>
     Children?
     <%= f.check_box :children%>
     <div class="form-actions">

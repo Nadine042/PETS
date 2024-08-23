@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'open-uri'
 require 'faker'
 list = []
 
@@ -41,7 +42,6 @@ pet_urls = {
   ]
 }
 
-
 Booking.destroy_all
 Pet.destroy_all
 User.destroy_all
@@ -68,7 +68,7 @@ end
     details: Faker::GreekPhilosophers.quote,
     start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
     end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
-    user: list.sample,
+    user: list.sample
   )
 
   file2 = URI.open(pet_urls[:dogs][index])
@@ -84,7 +84,7 @@ end
     details: Faker::GreekPhilosophers.quote,
     start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
     end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
-    user: list.sample,
+    user: list.sample
   )
 
   file3 = URI.open(pet_urls[:cats][index])
@@ -100,7 +100,7 @@ end
     details: Faker::GreekPhilosophers.quote,
     start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
     end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
-    user: list.sample,
+    user: list.sample
   )
 
   file4 = URI.open(pet_urls[:birds][index])
@@ -116,7 +116,7 @@ end
     details: Faker::GreekPhilosophers.quote,
     start_date: Faker::Date.between(from: '2024-09-1', to: '2024-10-1'),
     end_date: Faker::Date.between(from: '2024-11-5', to: '2024-11-7'),
-    user: list.sample,
+    user: list.sample
   )
 
   file5 = URI.open(pet_urls[:rabbits][index])

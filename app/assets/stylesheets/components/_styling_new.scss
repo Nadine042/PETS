@@ -5,15 +5,16 @@
 }
 
 .card {
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#new_card {
   padding: 50px;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.form-control {
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 50px;
 }
 
 #post_pet {
@@ -22,6 +23,16 @@
   height: 40px;
 }
 
-#kind {
-  color: rgb(255, 255, 255);
+#btn_post {
+  margin-top: 20px;
+}
+
+.upload_photo {
+  margin-top: 20px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px dashed #737373;
+  border-radius: 5px;
 }

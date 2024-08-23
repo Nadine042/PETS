@@ -1,5 +1,11 @@
 <nav id="main-menu">
      <ul class="nav-bar">
+
+          <li class="image">
+               <!-- Cloudinary Bild einfügen -->
+               <%= image_tag "https://res.cloudinary.com/dwalfnpav/image/upload/v1724366805/LogoPETSNew_xrutfe.png", alt: "Logo", class: "nav-image" %>
+          </li>
+
           <li class="nav-button-home"><%= link_to 'Home', root_path%></li>
           <li class="nav-button-services"><%= link_to 'Pets',  pets_path%></li>
           <li class="nav-button-products"><%= link_to 'Post',  new_pet_path%></li>

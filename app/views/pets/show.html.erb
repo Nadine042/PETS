@@ -13,10 +13,10 @@
           <% else %>
             <div>
             <p>Available: <%= @pet.start_date %> to <%= @pet.end_date %><p>
+            <%= link_to "I want to pay attention", new_pet_booking_path(@pet), class: "btn btn-primary", id: "attention_button" %>
             </div>
           <% end %>
 
-          <%= link_to "I want to pay attention", new_pet_booking_path(@pet), class: "btn btn-primary", id: "attention_button" %>
           <p><%= link_to "Back to the pets", pets_path, class: "btn btn-outline-secondary mt-2", id: "back_button" %></p>
        </div>
 

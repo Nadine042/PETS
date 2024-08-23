@@ -4,7 +4,7 @@
     <div class="row align-items-center">
        <div class="col-md-6 text-center">
           <% @pet.picture_url %>
-          <p><%= image_tag @pet.profile_picture, width: "450px", alt: "#{@pet.name} profile picture", class: "rounded-image" %></p>
+          <p><%= cl_image_tag @pet.profile_picture.key, width: "450px", alt: "#{@pet.name} profile picture", class: "rounded-image" %></p>
 
           <%if @pet.user == current_user%>
             <%=link_to 'edit pet info', edit_pet_path(@pet)%>

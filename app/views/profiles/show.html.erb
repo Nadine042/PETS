@@ -19,9 +19,7 @@
                 <h2 class="profile_page_h2"><strong>Your pets are</strong></h2>
                 <% @pets.each do |pet| %>
 
-                <p class="profile_page_p"><%= link_to "#{pet.name} #{pet.age} year old and #{pet.kind}", pet_path(pet), class: "btn mt-2", id: "pet_link_button" %></p>
-
-
+                <p class="profile_page_p"><%= link_to "#{pet.name}", pet_path(pet), class: "btn mt-2", id: "pet_link_button" %></p>
 
                 <% end %>
               <% else %>

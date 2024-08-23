@@ -1,7 +1,8 @@
 <%= render 'nav' %>
 <div class="container_new">
   <div class="col-6">
-    <div class="card">
+    <div class="card" id="new_card">
+     <div class >
       <h5>Add your pet here</h5>
       <%= simple_form_for(@pet) do |f| %>
           <%= f.input :name %>
@@ -14,16 +15,20 @@
             </div>
           </div>
 
-          <%= f.input :details %>
+            <%= f.input :details %>
+            <%= f.input :start_date %>
+            <%= f.input :end_date %>
+
           <div class="upload_photo">
-            <%= f.input :profile_picture, as: :file, input_html: { class: 'file-input' } %>
+            <label for="pet_profile_picture">Add a photo</label>
+            <%= f.input :profile_picture, as: :file, label: false, input_html: { class: 'file-input d-none' } %>
           </div>
 
-          <div class="row">
-            <%= f.submit "Post your Pet", class: "btn btn-primary"%>
-          </div>
+          <%= f.submit "Post your pet", class: "btn btn-primary w-100", id: "btn_post" %>
+
 
       <% end %>
+     </div>
     </div>
   </div>
 </div>

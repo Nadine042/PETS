@@ -14,6 +14,7 @@
             <div>
             <p>Available: <%= @pet.start_date %> to <%= @pet.end_date %><p>
             <%= link_to "I want to pay attention", new_pet_booking_path(@pet), class: "btn btn-primary", id: "attention_button" %>
+             <%= link_to "Pet Owner", profiles_path(@pet.user), class: "btn btn-primary", id: "attention_button" %>
             </div>
           <% end %>
 

@@ -10,7 +10,27 @@
 require 'open-uri'
 require 'faker'
 list = []
-
+user_pics = [
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409963/clarissa-cruz-headshot-people-f4197aa2a3b44efb90f907198d950c8d_iy8peb.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409962/Chris-Pratt_utkbfp.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409961/alexandre-abitbol_rpcffj.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409960/how-to-stop-being-a-people-pleaser-1_1_frbwnp.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409959/TaylorSwift_PEOPLE_2-3ae7b9b0cfee4c869253ec38306a5ead_awcfpi.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409958/Jonah-Hill_c9j4fw.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409957/91622_People_Wendy_Naugle_S3_1255_FNL_preview-4ac906ede68e4de68aaabe483a7a0d4f_ozxiib.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409956/p-5_gdd0hk.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409956/Adam-Mastroianni-square_vlqyua.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409915/canva-brown-and-light-brown_2C-circle-framed-instagram-profile-picture-2PE9qJLmPac_zgoh18.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409911/canva-yellow-inspiration-modern-instagram-profile-picture-kpZhUIzCx_w_t73xyo.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409912/profile_yqkaez.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409908/premium_photo-1671656333460-a3a85854d01e_trngy7.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409907/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e_anwl34.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409909/profile-picture_mhkuav.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409906/7K5BkEX8HqQShfGMFH3NuzAgOgIxdzBASWwsBW1FenQPy1cW5alzsLtQirKzLC4ces7_1GXnMNeOso6RYz1-A8hWPXZismqXm0pMl7UWH1ObjQlsZQ_w1440-v1-e30_dwxkdn.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409753/premium_photo-1673866484792-c5a36a6c025e_vcqehd.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409749/canva-green-gradient-minimalist-simple-instagram-profile-picture-tBlf3wVYGhg_jd3yut.jpg",
+  "https://res.cloudinary.com/do9ythsfg/image/upload/v1724409749/wp-2021-01-linkedin-profile-picture-after_h56daq.jpg"
+]
 pet_urls = {
   dogs: [
     "https://res.cloudinary.com/dwalfnpav/image/upload/v1724349861/Dog2_rsgl1a.jpg",
@@ -55,10 +75,12 @@ while list.size < 15
     children: rand(1..2) == 1,
     email: Faker::Internet.email,
     password: "password",
-    password_confirmation: "password",
-    profile_url: Faker::Avatar.image
+    password_confirmation: "password"
   )
   list << user
+  user_file = URI.open(user_pics.last)
+  user.photo.attach(io: user_file, filename: 'student_one.png', content_type: 'image/png')
+  user_pics.pop
 end
 5.times do |index|
   pet = Pet.new(

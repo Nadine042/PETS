@@ -9,13 +9,15 @@
     .banner {
       background-size: cover;
       background-position-y: 30%;
-      padding: 150px 0;
+      padding: 150px;
+      padding-top: 220px;
+      padding-bottom: 80px;
       height: 500px;
 
         h1 {
         margin: 0;
         color: white;
-        text-shadow: 3px 3px #605f5f49;
+        text-shadow: 3px 3px #16161649;
         font-size: 32px;
         font-weight: bold;
         margin: 20px;
@@ -24,7 +26,7 @@
         p {
         font-size: 20px;
         color: white;
-        text-shadow: 3px 3px #605f5f49;
+        text-shadow: 3px 3px #16161649;
         margin-left: 0%;
       }
 
@@ -43,6 +45,8 @@
     }
   }
   .faq{
+    margin-bottom: 50px;
+
     h2 {
       margin: 20px auto 80px;
       font-size: 38px;

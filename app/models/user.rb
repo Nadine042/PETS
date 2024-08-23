@@ -8,4 +8,6 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+  validates :first_name, :last_name, :phone_number, :location, presence: true
+  validates :phone_number, format: { with: /\+\d*/ }
 end

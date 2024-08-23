@@ -1,64 +1,45 @@
-.profile{
-  align-items: center;
-  display: flex;
-  flex: row;
-  justify-content: space-evenly;
-
-  .part1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    h1{
-      margin-left: 0px;
-    }
-
-    img{
-      border-radius: 100%;
-      margin-bottom: 25px;
-    }
-  }
-
-  .part2{
-    border: solid rgb(209, 209, 209);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 25px;
-    padding-left: 30px;
-    padding-right: 75px;
-    margin-top: 15px;
-    padding-bottom: 0%;
-
-    h2{
-      margin-left: 0px;
-      font-size: 25px;
-    }
-
-    p{
-      margin-left: 10%;
-      font-size: 20px;
-    }
-
-    a{
-      margin: 0px;
-    }
-
-    .links{
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      width: 100%;
-
-      p{
-        margin: 10px;
-        font-size: medium;
-      }
-    }
-  }
-
-#contact-info {
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
+#card_show {
+ padding-top: 100px;
 }
+
+.profile_page_h2 {
+  font-size: 18px;
+  color: rgb(76, 76, 76);
+}
+
+.profile_page_p {
+  font-size: 12px;
+  color: rgb(76, 76, 76);
+}
+
+.profile_page_h1 {
+  font-size: 32px;
+  color: rgb(76, 76, 76);
+  margin-bottom: 30px;
+  margin-top: -70px;
+}
+
+#profile_photo {
+  width: 200px;
+  height: 200px;
+}
+
+#edit_button {
+  font-size: 12px;
+}
+
+#signout_button {
+  font-size: 12px;
+  margin-left: -25px;
+}
+
+#buttons_profile {
+  margin-top: 50px;
+}
+
+#pet_link_button {
+  border: solid rgb(149, 233, 221);
+  color: rgb(149, 233, 221);
+  font-size: 12px;
+  width: 80px;
 }

@@ -1,3 +1,5 @@
+<div class="sure">
+<% if @pet.bookings.size == 0%>
 <h1>New Booking Request</h1>
 <br>
 <h2>Are you sure</h2>
@@ -6,3 +8,8 @@
   <%= f.submit "Yes, im sure", class: "btn btn-primary" %>
 <% end %>
 </p>
+<% else %>
+<h1>Sorry, this pet is already booked</h1>
+<%= link_to 'Back to pets',  pets_path%>
+<% end %>
+</div>

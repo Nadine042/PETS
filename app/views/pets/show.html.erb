@@ -1,32 +1,45 @@
+<%= render 'nav' %>
+<div class="container mt-5" id="container_show">
+  <div class="card" id="card_show">
+    <div class="row align-items-center">
+       <div class="col-md-6 text-center">
+          <% @pet.picture_url %>
+          <p><%= image_tag @pet.profile_picture, width: "450px", alt: "#{@pet.name} profile picture", class: "rounded-image" %></p>
 
-<div class="container">
-  <div class="col-6">
-    <% @pet.picture_url %>
-    <h1><%= @pet.name %></h1>
-    <h2><strong>Age: </strong><%= @pet.age %></h2>
-    <h2><strong>Type: </strong><%= @pet.kind %></h2>
-    <h2><strong>Description: </strong></h2>
-    <h3><%= @pet.details %></h3>
-    <%if @pet.user == current_user%>
-      <%=link_to 'edit pet info', edit_pet_path(@pet)%>
-    <%elsif @pet.bookings.size > 0  %>
-        <h2><strong><%="booked"%></strong></h3>
-    <% else %>
-      <div>
-      <p>booking from <%= @pet.start_date %> to <%= @pet.end_date %><p>
-      </div>
-      <%= link_to "make a booking", new_pet_booking_path(@pet), class: "btn btn-primary"%>
-    <% end %>
-    <p><%= link_to "Back to the pets", pets_path, class: "link" %></p>
-  </div>
-  <div class="col-6">
-    <p><img src="<%= @pet.picture_url %>" alt="Pet Image" class="image" /></p>
-  </div>
+          <%if @pet.user == current_user%>
+            <%=link_to 'edit pet info', edit_pet_path(@pet)%>
+          <%elsif @pet.bookings.size > 0  %>
+              <h2><strong><%="booked"%></strong></h3>
+          <% else %>
+            <div>
+            <p>Available: <%= @pet.start_date %> to <%= @pet.end_date %><p>
+            </div>
+          <% end %>
+
+          <%= link_to "I want to pay attention", new_pet_booking_path(@pet), class: "btn btn-primary", id: "attention_button" %>
+          <p><%= link_to "Back to the pets", pets_path, class: "btn btn-outline-secondary mt-2", id: "back_button" %></p>
+       </div>
+
+    <div class="col-md-6">
+      <h1 id="name"><%= @pet.name %></h1>
+      <h2 class="details"><strong>Age: </strong><%= @pet.age %></h2>
+      <h2 class="details"><strong>Type: </strong><%= @pet.kind %></h2>
+      <h2 class="details"><strong>Description: </strong><%= @pet.details %></h2>
+        <div class="map" style="width: 60%; height: 300px; width: 360px"
+            data-controller="map"
+            data-map-markers-value="<%= @marker.to_json %>"
+            data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+    </div>
+
+
+      <%=puts(@pet)%>
+
+
+     </div>
+    </div>
   </div>
 <div class="d-flex justify-content-center">
-  <div style="width: 60%; height: 300px;"
-    data-controller="map"
-    data-map-markers-value="<%= @marker.to_json %>"
-    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+
 </div>

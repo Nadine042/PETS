@@ -4,11 +4,11 @@
   align-items: center;
 }
 
-
-
 .card {
-  padding: 20px;
+  padding: 50px;
   background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .form-control {
@@ -16,4 +16,12 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+#post_pet {
+  border-radius: 5px;
+  width: 634px;
+  height: 40px;
+}
 
+#kind {
+  color: rgb(255, 255, 255);
+}
